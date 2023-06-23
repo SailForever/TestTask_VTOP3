@@ -52,3 +52,88 @@
   right: 0;
   bottom: 0;
 }
+
+.formFull {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 2em;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  width: 80%
+}
+
+.box :first-child {
+    align-self: center;
+}
+
+.formText1,.formText2,.formText3,.formText4,.formText5,.formText7,.formText8 {
+  border-bottom: 1px solid grey;
+}
+
+.radio1 {
+  margin-left: 0px;
+}
+
+.radio2 {
+  margin-left: 20px;
+}
+
+.radio1Txt,.radio2Txt {
+  padding-left: 10px;
+  font-size: 24px;
+  color: black;
+}
+
+label {
+  font-size: 24px;
+  color: grey;
+}
+
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+select {
+  width: 100%;
+  border: none;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+input[type='radio'] {
+  position: relative;
+  height: 22px;
+  width: 22px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+input[type='radio']::before {
+  content: '';
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid #5A61ED;
+}
+
+input[type='radio']:checked::after {
+  content: '';
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #5A61ED;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
