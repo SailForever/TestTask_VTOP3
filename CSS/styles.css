@@ -1,0 +1,54 @@
+.body {
+  margin: 0px
+}
+
+.leftBlock {
+  width: 20%;
+  height: 100vh;
+  float: left;
+  background-color: #5A61ED
+}
+
+.leftText {
+  width: 360px;
+  position: absolute;
+  bottom: 140px;
+  transform: rotate(270deg);
+  right: 80%;
+  margin-right: -100px;
+  font-size: 100px;
+  color: white;
+  font-family: 'Bradley Hand', serif;
+}
+
+.rightBlock {
+  width: 80%;
+  float: left;
+  height: 100vh;
+  background-color: white"
+
+}
+
+.upTextBlock {
+  padding-left: 100px;
+  padding-top: 100px;
+}
+
+.upText {
+  font-size: 40px;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.downText {
+  font-size: 25px;
+  color: gray;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.obj {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
