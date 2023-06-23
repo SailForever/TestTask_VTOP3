@@ -15,10 +15,53 @@
           <span class="upText">New user?</span><br>
           <span class="downText">Use the form below to create your account.</span>
         </div>
+        <form class="formFull" name=firstF novalidate>
+            <span class="formText1">
+                <label for="FirstName">First Name</label>
+                <input class="formInp1" type=text name=developers><b class="formApply-1fail" id=nameDevelopersFail></b>
+              </span>
+            <span class="formText2">
+                <label for="LastName">Last Name</label>
+                <input class="formInp2" type=text name=nameWeb><b class="formApply-2fail" id=nameWebFail></b>
+              </span>
+            <span class="formText3">
+                <label for="Nationality">Nationality</label>
+                <select name=catalog>
+                <option disabled value=0 selected>выберите каталог</option>
+                <option value=1>Страна</option>
+                <option value=2>Страна</option>
+                <option value=3>Страна</option>
+                </select><b id=catalogFail style='color: red'></b>
+            </span>
+            <span class="formText4">
+                <label for="E-mail">E-mail</label>
+                <input class="formInp4" type=email name=email placeholder='E-mail'><b id=nameEmailFail style='color: red'></b>
+            </span>
+            <span class="formText5">
+                  <label for="Date of Birth">Date of Birth</label>
+                  <input class="formInp5" type=date name=dateWeb min="1996-01-01" max="2024-01-01"><b id=nameDateFail style='color: red'></b>
+            </span>
+            <span class="formText6">
+                  <label for="Gender">Gender</label><br>
+                  <input class="radio1" type=radio name=answer value=1><span class="radio1Txt">Male</span>
+                  <input class="radio2" type=radio name=answer value=2><span class="radio2Txt">Female</span>
+                  <b id=nameRadioFail style='color: red'></b>
+            </span>
+            <span class="formText7">
+                  <label for="Password">Password</label>
+                  <input class="formInp7" type=password name=developers><b class="formApply-1fail" id=nameDevelopersFail></b>
+            </span>
+            <span class="formText8">
+                  <label for="ConfirmPassword">Password</label>
+                  <input class="formInp8" type=password name=developers><b class="formApply-1fail" id=nameDevelopersFail></b>
+            </span>
+            <input class="formInp9" type=submit name=done value='Заказать'>
+        </form>
       </div>
       <object class="obj" id="circ" type="image/svg+xml" data="SVG/anim_user.svg"></object>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js" referrerpolicy="no-referrer"></script>
     <script src="JS/svg_anim.js"></script>
+    <script src="JS/form_valid.js"></script>
   </body>
 </html>
