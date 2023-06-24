@@ -203,7 +203,7 @@ function validateFirstF (eo){
   }
   if (!errorsAll) {
     const formFirstF = document.forms.firstF;
-
+    ajaxForm();
     let firstNameClear = formFirstF.elements.firstName;
     firstNameClear.value='';
     let lastNameClear = formFirstF.elements.lastName;
@@ -225,7 +225,6 @@ function validateFirstF (eo){
     function timeAnim(){
       timeShow();
     }
-    ajaxForm();
     eo.preventDefault();
   }
   function timeShake(){
