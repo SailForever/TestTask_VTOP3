@@ -51,28 +51,35 @@
   position: absolute;
   right: 0;
   bottom: 0;
+  opacity: 0.2;
 }
 
 .formFull {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px 2em;
+  gap: 30px 5em;
   padding-left: 100px;
   padding-right: 100px;
   padding-top: 50px;
-  width: 80%
+  position: relative;
+  z-index: 1;
 }
 
 .box :first-child {
-    align-self: center;
+  align-self: center;
 }
 
 .formText1,.formText2,.formText3,.formText4,.formText5,.formText7,.formText8 {
   border-bottom: 1px solid grey;
 }
 
+.radio1:hover, .radio2:hover {
+ cursor: pointer;
+}
+
 .radio1 {
   margin-left: 0px;
+  cursor: pointer;
 }
 
 .radio2 {
@@ -85,9 +92,10 @@
   color: black;
 }
 
-label {
+label,.formText9 {
   font-size: 24px;
   color: grey;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 
@@ -100,6 +108,8 @@ select {
   border: none;
   line-height: 30px;
   font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: transparent;
 }
 
 input[type='radio'] {
@@ -136,4 +146,40 @@ input[type='radio']:checked::after {
   background-color: #5A61ED;
   transform: translate(-50%, -50%);
   visibility: visible;
+}
+
+.formInp7,.formInp8 {
+  position: relative;
+  z-index: 1;
+}
+
+.formText9 {
+  position: fixed;
+  bottom: 60px;
+}
+
+.formText10 {
+  position: fixed;
+  right: 100px;
+  bottom: 60px;
+  z-index: 1;
+}
+.formInp10:hover {
+  cursor: pointer;
+}
+
+.formInp10 {
+  width: 210px;
+  height: 50px;
+  font-size: 24px;
+  color: white;
+  line-height: 30px;
+  background-color: #5A61ED;
+  border: none;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.bPass {
+  position: absolute;
+  bottom: 0;
 }
