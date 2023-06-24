@@ -1,81 +1,192 @@
-//Ищем форму
+//find form
 const formFirstF = document.forms.firstF;
 
-//Имя
-const developersName = formFirstF.elements.developers;
-const developersValue = developersName.value;
-developersName.addEventListener('blur', (eo)=>developersBlur(false));
-function developersBlur(focusError) {
+//firstName
+const firstNameJs = formFirstF.elements.firstName;
+const firstNameJsValue = firstNameJs.value;
+firstNameJs.addEventListener('blur', (eo)=>firstNameBlur(false));
+function firstNameBlur(focusError) {
   const formFirstF = document.forms.firstF;
-  const developersName = formFirstF.elements.developers;
-  const developersValue = developersName.value;
-  let bName = document.getElementById('nameDevelopersFail');
+  const firstNameJs = formFirstF.elements.firstName;
+  const firstNameJsValue = firstNameJs.value;
   let errors = 0;
-  if ((developersValue.length > 40) || (developersValue.length < 2)) {
-    bName.innerHTML = 'Введите пожалуйста имя больше 2-х символов!';
+  if ((firstNameJsValue.length > 40) || (firstNameJsValue.length < 2)) {
+    firstNameJs.placeholder="Enter your First Name";
     errors++;
     if (focusError)
-      developersName.focus();
-  }
-  else {
-    bName.innerHTML = '';
+      firstNameJs.focus();
   }
   return errors;
 }
 
-//Номер телефона
-const webName = formFirstF.elements.nameWeb;
-const webValue = webName.value;
-webName.addEventListener('blur', (eo)=>webBlur(false));
-function webBlur(focusError) {
+//lastName
+const lastNameJs = formFirstF.elements.lastName;
+const lastNameJsValue = lastNameJs.value;
+lastNameJs.addEventListener('blur', (eo)=>lastNameBlur(false));
+function lastNameBlur(focusError) {
   const formFirstF = document.forms.firstF;
-  const webName = formFirstF.elements.nameWeb;
-  const webValue = webName.value;
-  let bName = document.getElementById('nameWebFail');
+  const lastNameJs = formFirstF.elements.lastName;
+  const lastNameJsValue = lastNameJs.value;
   let errors = 0;
-  if ((isNaN(webValue)) || (webValue=='') || (webValue.length < 4)) {
-    bName.innerHTML = 'Введите пожалуйста номер больше 4-х цифр!';
+  if ((lastNameJsValue.length > 40) || (lastNameJsValue.length < 2)) {
+    lastNameJs.placeholder="Enter your Last Name";
     errors++;
     if (focusError)
-      webName.focus();
-  }
-  else {
-    bName.innerHTML = '';
+      lastNameJs.focus();
   }
   return errors;
 }
 
-//Комментарий
-const bigTextName = formFirstF.elements.bigText;
-const bigTextValue = bigTextName.value;
-bigTextName.addEventListener('blur', (eo)=>bigTextBlur(false));
-function bigTextBlur(focusError) {
+//Nationality
+const nationalityJs = formFirstF.elements.nationality;
+const nationalityJsValue = nationalityJs.value;
+nationalityJs.addEventListener('change', (eo)=>nationalityChange(false));
+function nationalityChange(focusError) {
   const formFirstF = document.forms.firstF;
-  const bigTextName = formFirstF.elements.bigText;
-  const bigTextValue = bigTextName.value;
-  let bName = document.getElementById('bigTextFail');
+  const nationalityJs = formFirstF.elements.nationality;
+  const nationalityJsValue = nationalityJs.value;
   let errors = 0;
-  if ((bigTextValue.length > 5000) || (bigTextValue.length < 10)) {
-    bName.innerHTML = 'Введите пожалуйста комментарий больше 10 символов!';
+  if (nationalityJsValue == 0) {
     errors++;
     if (focusError)
-      bigTextName.focus();
-  }
-  else {
-    bName.innerHTML = '';
+      nationalityJs.focus();
   }
   return errors;
 }
 
-//Кнопка отправить
+//email
+const emailName = formFirstF.elements.email;
+const emailValue = emailName.value;
+emailName.addEventListener('blur', (eo)=>emailBlur(false));
+function emailBlur(focusError) {
+  const formFirstF = document.forms.firstF;
+  const emailName = formFirstF.elements.email;
+  const emValid = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+  let errors=0;
+  if (!(isEmailValid(emailName.value))) {
+    emailName.placeholder = 'Enter your E-mail';
+    errors++;
+    if (focusError)
+      emailName.focus();
+  }
+    function isEmailValid(value) {
+      return emValid.test(value);
+    }
+  return errors;
+}
+
+//Date of Birth
+const dataName = formFirstF.elements.dateWeb;
+const dataValue = dataName.value;
+dataName.addEventListener('blur', (eo)=>dateBlur(false));
+function dateBlur(focusError) {
+  const formFirstF = document.forms.firstF;
+  const dataName = formFirstF.elements.dateWeb;
+  const dataValue = dataName.value;
+  let errors = 0;
+  if (dataValue.length<1 || (dataValue>'2024-01-01') || (dataValue<'1900-01-01')) {
+    dataName.placeholder = 'Enter your Date of Birth';
+    errors++;
+    if (focusError)
+      dataName.focus();
+  }
+  return errors;
+}
+
+//Gender
+var elemsRadio = formFirstF.elements.answer;
+for (var i = elemsRadio.length - 1; i >= 0; i--) {
+  const elemRadio = elemsRadio[i];
+  elemRadio.addEventListener('click', ()=>validAnswer(elemRadio));
+};
+var errorsRadio= 0;
+var bNameRadio = document.getElementById('nameRadioFail');
+function validAnswer (elemRadio) {
+  if (elemRadio.checked == true) {
+    errorsRadio++;
+    bNameRadio.innerHTML = '';
+  }
+  return errorsRadio;
+}
+
+//password
+const passwordJs = formFirstF.elements.password;
+var passwordJsValue;
+passwordJs.addEventListener('blur', (eo) => passwordJsBlur(false));
+function passwordJsBlur(focusError) {
+  const formFirstF = document.forms.firstF;
+  const passwordJs = formFirstF.elements.password;
+  passwordJsValue = passwordJs.value;
+  let bName = document.getElementById('namePasswordFail');
+  let uppers = /[A-Z]/; // There is at least one letter in upper case
+  let lowers = /[a-z]/; // There is at least one letter in lower case
+  let numbers = /\d/; // There is at least one figure
+  let onlylatin = /^[A-Za-z\d]{8,}$/; //The password must be at least 8 characters long. The password uses only Latin letters and numbers.
+  let errors = 0;
+
+  if (!(isPasswordUpper(passwordJs.value)) || !(isPasswordLowers(passwordJs.value)) || !(isPasswordNumbers(passwordJs.value)) || !(isPasswordOnlylatin(passwordJs.value))) {
+    bName.innerHTML = 'Enter your Password (from 8 characters and using numbers and upper and lower case letters)';
+    errors++;
+    if (focusError)
+      passwordJs.focus();
+  }
+  else bName.innerHTML = '';
+
+  function isPasswordUpper(value) {
+    return uppers.test(value);
+  }
+  function isPasswordLowers(value) {
+    return lowers.test(value);
+  }
+  function isPasswordNumbers(value) {
+    return numbers.test(value);
+  }
+  function isPasswordOnlylatin(value) {
+    return onlylatin.test(value);
+  }
+  return errors;
+}
+
+//confirmPassword
+const confirmPasswordJS = formFirstF.elements.confirmPassword;
+const confirmPasswordJSValue = confirmPasswordJS.value;
+confirmPasswordJS.addEventListener('blur', (eo) => confirmPasswordJSBlur(false));
+function confirmPasswordJSBlur(focusError) {
+  const formFirstF = document.forms.firstF;
+  const confirmPasswordJS = formFirstF.elements.confirmPassword;
+  const confirmPasswordJSValue = confirmPasswordJS.value;
+  let bName = document.getElementById('nameConfirmPasswordFail');
+  let errors = 0;
+  if (confirmPasswordJSValue.length<1 || confirmPasswordJSValue!==passwordJsValue) {
+    bName.innerHTML = "Passwords don't match";
+    errors++;
+    if (focusError)
+      passwordJs.focus();
+  }
+  else bName.innerHTML = '';
+  return errors;
+}
+
+
+//submit
 formFirstF.addEventListener('submit',validateFirstF,false);
 
 function validateFirstF (eo){
   eo = eo || window.event;
   let errorsAll=0;
-  errorsAll+=developersBlur(!errorsAll);
-  errorsAll+=webBlur(!errorsAll);
-  errorsAll+=bigTextBlur(!errorsAll);
+  errorsAll+=firstNameBlur(!errorsAll);
+  errorsAll+=lastNameBlur(!errorsAll);
+  errorsAll+=nationalityChange(!errorsAll);
+  errorsAll+=emailBlur(!errorsAll);
+  errorsAll+=dateBlur(!errorsAll);
+  if (errorsRadio == 0) {
+    eo.preventDefault();
+    document.getElementById('nameRadioFail').innerHTML = 'Поставьте пожалуйста галочку!';
+  }
+  errorsAll+=passwordJsBlur(!errorsAll);
+  errorsAll+=confirmPasswordJSBlur(!errorsAll);
+  /*errorsAll+=webBlur(!errorsAll);
+  errorsAll+=bigTextBlur(!errorsAll);*/
   if (errorsAll) {
     eo.preventDefault();
   }
