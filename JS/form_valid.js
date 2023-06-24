@@ -172,8 +172,14 @@ function confirmPasswordJSBlur(focusError) {
 //submit
 formFirstF.addEventListener('submit',validateFirstF,false);
 
+const showS=document.querySelector('.formText11');
+showS.style.display='none';
+
 function validateFirstF (eo){
+
+  
   eo = eo || window.event;
+  let timer;
   let errorsAll=0;
   errorsAll+=firstNameBlur(!errorsAll);
   errorsAll+=lastNameBlur(!errorsAll);
@@ -187,11 +193,49 @@ function validateFirstF (eo){
   errorsAll+=passwordJsBlur(!errorsAll);
   errorsAll+=confirmPasswordJSBlur(!errorsAll);
   if (errorsAll) {
+    const shake=document.querySelector('.formInp10');
+    shake.style.animation='1.2s ease-in-out 0s normal none running trambling-animation';
+    timer=setInterval(timeAnim,3000)
+    function timeAnim(){
+      timeShake();
+    }
     eo.preventDefault();
   }
   if (!errorsAll) {
+    const formFirstF = document.forms.firstF;
+
+    let firstNameClear = formFirstF.elements.firstName;
+    firstNameClear.value='';
+    let lastNameClear = formFirstF.elements.lastName;
+    lastNameClear.value='';
+    let nationalityClear = formFirstF.elements.nationality;
+    nationalityClear.value='';
+    let emailNameClear = formFirstF.elements.email;
+    emailNameClear.value='';
+    let dataNameClear = formFirstF.elements.dateWeb;
+    dataNameClear.value='';
+    let passwordClear = formFirstF.elements.password;
+    passwordClear.value='';
+    let confirmPasswordClear = formFirstF.elements.confirmPassword;
+    confirmPasswordClear.value='';
+
+    const showS=document.querySelector('.formText11');
+    showS.style.display='';
+    timer=setInterval(timeAnim,3000)
+    function timeAnim(){
+      timeShow();
+    }
     ajaxForm();
     eo.preventDefault();
+  }
+  function timeShake(){
+    const shake=document.querySelector('.formInp10');
+    shake.style.animation='';
+    clearInterval(timer)
+  }
+  function timeShow(){
+    showS.style.display='none';
+    clearInterval(timer)
   }
 }
 
