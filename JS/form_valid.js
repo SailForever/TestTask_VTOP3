@@ -94,7 +94,8 @@ function dateBlur(focusError) {
 }
 
 //Gender
-var elemsRadio = formFirstF.elements.answer;
+var elemsRadio = formFirstF.elements.gender;
+const elemsRadioValue=elemsRadio.value;
 for (var i = elemsRadio.length - 1; i >= 0; i--) {
   const elemRadio = elemsRadio[i];
   elemRadio.addEventListener('click', ()=>validAnswer(elemRadio));
@@ -181,13 +182,67 @@ function validateFirstF (eo){
   errorsAll+=dateBlur(!errorsAll);
   if (errorsRadio == 0) {
     eo.preventDefault();
-    document.getElementById('nameRadioFail').innerHTML = 'Поставьте пожалуйста галочку!';
+    document.getElementById('nameRadioFail').innerHTML = 'Place a tick in the box.';
   }
   errorsAll+=passwordJsBlur(!errorsAll);
   errorsAll+=confirmPasswordJSBlur(!errorsAll);
-  /*errorsAll+=webBlur(!errorsAll);
-  errorsAll+=bigTextBlur(!errorsAll);*/
   if (errorsAll) {
     eo.preventDefault();
+  }
+  if (!errorsAll) {
+    ajaxForm();
+    eo.preventDefault();
+  }
+}
+
+
+function ajaxForm() {
+
+  const ajaxHandlerScript = "https://fe.it-academy.by/AjaxStringStorage2.php";
+  var nameEr = 'ERMOLOVICH_T5';
+
+  const firstNameJsValue = firstNameJs.value;
+  const lastNameJsValue = lastNameJs.value;
+  const nationalityJsValue = nationalityJs.value;
+  const emailValue = emailName.value;
+  const dataValue = dataName.value;
+  const elemsRadio = formFirstF.elements.gender;
+  const elemsRadioValue=elemsRadio.value;
+  const passwordJsValue = passwordJs.value;
+  const confirmPasswordJSValue = confirmPasswordJS.value;
+
+  let password;
+  let resultEr;
+
+  password = Math.random();
+  $.ajax({
+    url: ajaxHandlerScript, type: 'POST', cache: false, dataType: 'json',
+    data: { f: 'LOCKGET', n: nameEr, p: password },
+    success: resultFunc, error: errorHandler
+  }
+  );
+
+  function resultFunc(resultFull) {
+    resultEr = [];
+    resultEr = JSON.parse(resultFull.result)
+    resultEr.push({
+      firstName: firstNameJsValue, lastName: lastNameJsValue,
+      nationality: nationalityJsValue, email: emailValue,
+      dateWeb: dataValue, gender: elemsRadioValue,
+      password: passwordJsValue, confirmPassword: confirmPasswordJSValue
+    })
+    $.ajax({
+      url: ajaxHandlerScript, type: 'POST', cache: false, dataType: 'json',
+      data: { f: 'UPDATE', n: nameEr, v: JSON.stringify(resultEr), p: password },
+      success: update_resultReady, error: errorHandler
+    }
+    );
+  }
+  function update_resultReady(ready) {
+    console.log(ready.result)
+  }
+
+  function errorHandler(jqXHR, statusStr, errorStr) {
+    alert(statusStr + ' ' + errorStr);
   }
 }
