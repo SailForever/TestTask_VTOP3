@@ -243,6 +243,38 @@ input[type='radio']:checked::after {
   }
 }
 
+.formText1 {
+  animation: 2s show ease;
+}
+
+.formText2 {
+  animation: 3.5s show ease;
+}
+
+.formText3 {
+  animation: 4.5s show ease;
+}
+
+.formText4 {
+  animation: 5.5s show ease;
+}
+
+.formText5 {
+  animation: 6.5s show ease;
+}
+
+.formText6 {
+  animation: 7.5s show ease;
+}
+
+.formText7 {
+  animation: 8.5s show ease;
+}
+
+.formText8 {
+  animation: 9.5s show ease;
+}
+
 .formText11 {
   display: grid;
   grid-row: 1;
