@@ -2,31 +2,59 @@
   margin: 0px
 }
 
+.fullBlock {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 100vh;
+  position: relative;
+}
+
 .leftBlock {
-  width: 20%;
-  height: 100vh;
-  float: left;
-  background-color: #5A61ED
+  background-color: #5A61ED;
+  position: relative;
 }
 
-.leftText {
-  width: 360px;
-  position: absolute;
-  bottom: 140px;
-  transform: rotate(270deg);
-  right: 80%;
-  margin-right: -100px;
-  font-size: 100px;
-  color: white;
-  font-family: 'Bradley Hand', serif;
-}
 
-.rightBlock {
-  width: 80%;
-  float: left;
-  height: 100vh;
-  background-color: white"
+@media all and (min-width: 750px) {
+  .leftText {
+    width: 360px;
+    position: absolute;
+    bottom: 140px;
+    transform: rotate(270deg);
+    right: 0;
+    margin-right: -100px;
+    font-size: 100px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+  }
 
+  .obj {
+    position: absolute;
+    right: -400%;
+    bottom: 0;
+    opacity: 0.2;
+  }
+
+  .objMob {
+    display: none;
+  }
+
+  .rightBlock {
+    background-color: white;
+  }
+
+  .formText9 {
+    padding-top: 100px;
+  }
+
+  .formText10 {
+    padding-top: 10px;
+    height: 130px;
+    display: grid;
+    grid-row-gap: 30px;
+    justify-items: end;
+    align-items: end;
+  }
 }
 
 .upTextBlock {
@@ -45,13 +73,6 @@
   font-size: 25px;
   color: gray;
   font-family: 'Times New Roman', Times, serif;
-}
-
-.obj {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  opacity: 0.2;
 }
 
 .formFull {
@@ -102,9 +123,10 @@
 
 label,
 .formText9 {
-  font-size: 20px;
-  color: grey;
+  font-size: 22px;
+  color: #595959;
   font-family: 'Times New Roman', Times, serif;
+  z-index: 1;
 }
 
 
@@ -187,18 +209,6 @@ input[type='radio']:checked::after {
   z-index: 1;
 }
 
-.formText9 {
-  position: fixed;
-  bottom: 60px;
-}
-
-.formText10 {
-  position: fixed;
-  right: 100px;
-  bottom: 60px;
-  z-index: 1;
-}
-
 .formInp10:hover {
   cursor: pointer;
 }
@@ -234,9 +244,8 @@ input[type='radio']:checked::after {
 }
 
 .formText11 {
-  position: fixed;
-  right: 100px;
-  bottom: 150px;
+  display: grid;
+  grid-row: 1;
   z-index: 1;
   width: 250px;
   font-size: 24px;
@@ -264,4 +273,61 @@ input[type='radio']:checked::after {
 .bPass {
   position: absolute;
   bottom: 0;
+}
+
+@media all and (max-width: 750px) {
+  .fullBlock {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    height: 100vh;
+    position: relative;
+  }
+
+  .leftText {
+    position: absolute;
+    bottom: 80px;
+    width: 210px;
+    margin-left: -64px;
+    transform: rotate(270deg);
+    font-size: 58px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  g#svg_38 {
+    transform: scale 1.5;
+  }
+
+  .obj {
+    display: none;
+  }
+
+  .objMob {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0.2;
+  }
+
+  .upTextBlock {
+    padding-top: 20px;
+  }
+
+  .formFull {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+    z-index: 1;
+  }
+
+  .formText10 {
+    display: grid;
+    grid-row-gap: 30px;
+    align-items: end;
+    padding-top: 15px;
+    z-index: 1;
+  }
 }

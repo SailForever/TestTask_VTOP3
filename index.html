@@ -3,16 +3,19 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <meta name="description" content="Author: A. Ermolovich">
   <link rel="stylesheet" type="text/css" href="CSS/styles.css">
-  <script src='https://fe.it-academy.by/JQ/jquery.js'></script>
+  <script src='JS/jquery_3.7.0.min.js'></script>
   <title>Sign Up</title>
 </head>
 
 <body style="margin: 0px">
-  <div>
+  <div class="fullBlock">
     <div class="leftBlock">
       <span class="leftText">Sign up</span>
+      <span style='display:none' id="obj">user</span>
+      <object class="obj" id="circ" type="image/svg+xml" data="SVG/anim_user.svg" aria-labelledby="obj"></object>
     </div>
     <div class="rightBlock">
       <div class="upTextBlock">
@@ -65,14 +68,16 @@
         </span>
         <span class="formText10">
           <input class="formInp10" type=submit name=done value='Complete Signup'>
+          <span class="formText11">Successful Registration</span>
         </span>
+        <object class="objMob" id="circMob" type="image/svg+xml" data="SVG/anim_userMob.svg"
+          aria-labelledby="obj"></object>
       </form>
-      <span class="formText11">Successful Registration</span>
     </div>
-    <object class="obj" id="circ" type="image/svg+xml" data="SVG/anim_user.svg"></object>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js" referrerpolicy="no-referrer"></script>
   <script src="JS/svg_anim.js"></script>
+  <script src="JS/svg_animMob.js"></script>
   <script src="JS/form_valid.js"></script>
 </body>
 

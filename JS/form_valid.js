@@ -249,23 +249,23 @@ function validateFirstF(eo) {
     ajaxForm();
     let firstNameClear = formFirstF.elements.firstName;
     firstNameClear.value = '';
-    firstNameClear.placeholder='';
+    firstNameClear.placeholder = '';
     let lastNameClear = formFirstF.elements.lastName;
     lastNameClear.value = '';
-    lastNameClear.placeholder='';
+    lastNameClear.placeholder = '';
     let nationalityClear = formFirstF.elements.nationality;
     nationalityClear.value = '';
     let emailNameClear = formFirstF.elements.email;
     emailNameClear.value = '';
-    emailNameClear.placeholder='';
+    emailNameClear.placeholder = '';
     let dataNameClear = formFirstF.elements.dateWeb;
     dataNameClear.value = '';
     let passwordClear = formFirstF.elements.password;
     passwordClear.value = '';
-    passwordClear.placeholder='';
+    passwordClear.placeholder = '';
     let confirmPasswordClear = formFirstF.elements.confirmPassword;
     confirmPasswordClear.value = '';
-    confirmPasswordClear.placeholder='';
+    confirmPasswordClear.placeholder = '';
 
     const showS = document.querySelector('.formText11');
     showS.style.display = '';
@@ -290,7 +290,7 @@ function validateFirstF(eo) {
 function ajaxForm() {
 
   const ajaxHandlerScript = "https://fe.it-academy.by/AjaxStringStorage2.php";
-  var nameEr = 'ERMOLOVICH_T5';
+  var nameEr = 'ERMOLOVICH_T4';
 
   const firstNameJsValue = firstNameJs.value;
   const lastNameJsValue = lastNameJs.value;
