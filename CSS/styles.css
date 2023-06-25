@@ -30,7 +30,7 @@
 }
 
 .upTextBlock {
-  padding-left: 100px;
+  padding-left: 25px;
   padding-top: 100px;
 }
 
@@ -57,9 +57,9 @@
 .formFull {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px 5em;
-  padding-left: 100px;
-  padding-right: 100px;
+  gap: 30px 20px;
+  padding-left: 25px;
+  padding-right: 25px;
   padding-top: 50px;
   position: relative;
   z-index: 1;
@@ -69,12 +69,19 @@
   align-self: center;
 }
 
-.formText1,.formText2,.formText3,.formText4,.formText5,.formText7,.formText8 {
-  border-bottom: 1px solid grey;
+.formText1,
+.formText2,
+.formText3,
+.formText4,
+.formText5,
+.formText7,
+.formText8 {
+  border-bottom: 1px solid #F2F2F2;
 }
 
-.radio1:hover, .radio2:hover {
- cursor: pointer;
+.radio1:hover,
+.radio2:hover {
+  cursor: pointer;
 }
 
 .radio1 {
@@ -86,14 +93,16 @@
   margin-left: 20px;
 }
 
-.radio1Txt,.radio2Txt {
+.radio1Txt,
+.radio2Txt {
   padding-left: 10px;
   font-size: 24px;
   color: black;
 }
 
-label,.formText9 {
-  font-size: 24px;
+label,
+.formText9 {
+  font-size: 20px;
   color: grey;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -107,9 +116,31 @@ select {
   width: 100%;
   border: none;
   line-height: 30px;
-  font-size: 20px;
+  font-size: 22px;
+  color: black;
   font-family: 'Times New Roman', Times, serif;
+  background: transparent;
   background-color: transparent;
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+  border: 0px;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: rgb(255, 40, 40);
 }
 
 input[type='radio'] {
@@ -135,6 +166,7 @@ input[type='radio']::before {
   border: 2px solid #5A61ED;
 }
 
+
 input[type='radio']:checked::after {
   content: '';
   position: absolute;
@@ -148,7 +180,9 @@ input[type='radio']:checked::after {
   visibility: visible;
 }
 
-.formInp7,.formInp8 {
+
+.formInp7,
+.formInp8 {
   position: relative;
   z-index: 1;
 }
@@ -164,6 +198,7 @@ input[type='radio']:checked::after {
   bottom: 60px;
   z-index: 1;
 }
+
 .formInp10:hover {
   cursor: pointer;
 }
@@ -180,14 +215,21 @@ input[type='radio']:checked::after {
 }
 
 @keyframes trambling-animation {
-  0%, 50%, 100% {
-      transform: rotate(0deg);
+
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg);
   }
-  10%, 30% {
-      transform: rotate(-10deg);
+
+  10%,
+  30% {
+    transform: rotate(-10deg);
   }
-  20%, 40% {
-      transform: rotate(10deg);
+
+  20%,
+  40% {
+    transform: rotate(10deg);
   }
 }
 
@@ -210,8 +252,13 @@ input[type='radio']:checked::after {
 }
 
 @keyframes show {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .bPass {

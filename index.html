@@ -1,76 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
-    <script src='https://fe.it-academy.by/JQ/jquery.js'></script>
-    <title>Sign Up</title>
-  </head>
-  <body style="margin: 0px">
-    <div>
-      <div class="leftBlock">
-        <span class="leftText">Sign up</span>
-      </div>
-      <div class="rightBlock">
-        <div class="upTextBlock">
-          <span class="upText">New user?</span><br>
-          <span class="downText">Use the form below to create your account.</span>
-        </div>
-        <form class="formFull" name=firstF novalidate>
-            <span class="formText1">
-                <label for="FirstName">First Name</label>
-                <input class="formInp1" type=text name=firstName placeholder="Alice">
-              </span>
-            <span class="formText2">
-                <label for="LastName">Last Name</label>
-                <input class="formInp2" type=text name=lastName placeholder="Miller">
-              </span>
-            <span class="formText3">
-                <label for="Nationality">Nationality</label>
-                <select name=nationality>
-                <option disabled value=0 selected>Choose your nationality</option>
-                <option value=1>American</option>
-                <option value=2>Russian</option>
-                <option value=3>Asian</option>
-                </select>
-            </span>
-            <span class="formText4">
-                <label for="E-mail">E-mail</label>
-                <input class="formInp4" type=email name=email placeholder='E-mail'>
-            </span>
-            <span class="formText5">
-                  <label for="Date of Birth">Date of Birth</label>
-                  <input class="formInp5" type=text name=dateWeb placeholder="Date of Birth" min="1900-01-01" max="2024-01-01" onfocus="(this.type='date')">
-            </span>
-            <span class="formText6">
-                  <label for="Gender">Gender</label><br>
-                  <input class="radio1" type=radio name=gender value=1><span class="radio1Txt">Male</span>
-                  <input class="radio2" type=radio name=gender value=2><span class="radio2Txt">Female</span>
-                  <b id=nameRadioFail style='color: red'></b>
-            </span>
-            <span class="formText7">
-                  <label for="Password">Password</label>
-                  <input class="formInp7" type=password name=password><b class="bPass" id=namePasswordFail style='color: red'></b>
-            </span>
-            <span class="formText8">
-                  <label for="ConfirmPassword">Confirm Password</label>
-                  <input class="formInp8" type=password name=confirmPassword><b class="bPass" id=nameConfirmPasswordFail style='color: red'></b>
-            </span>
-            <span class="formText9">
-                  Have an account?
-                  <a href="#">Login</a>
-            </span>
-            <span class="formText10">
-                  <input class="formInp10" type=submit name=done value='Complete Signup'>
-            </span>
-        </form>
-      <span class="formText11">Successful Registration</span>
-      </div>
-      <object class="obj" id="circ" type="image/svg+xml" data="SVG/anim_user.svg"></object>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+  <script src='https://fe.it-academy.by/JQ/jquery.js'></script>
+  <title>Sign Up</title>
+</head>
+
+<body style="margin: 0px">
+  <div>
+    <div class="leftBlock">
+      <span class="leftText">Sign up</span>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js" referrerpolicy="no-referrer"></script>
-    <script src="JS/svg_anim.js"></script>
-    <script src="JS/form_valid.js"></script>
-  </body>
+    <div class="rightBlock">
+      <div class="upTextBlock">
+        <span class="upText">New user?</span><br>
+        <span class="downText">Use the form below to create your account.</span>
+      </div>
+      <form class="formFull" name=firstF novalidate>
+        <span class="formText1">
+          <label>First Name</label>
+          <input class="formInp1" type=text name=firstName>
+        </span>
+        <span class="formText2">
+          <label>Last Name</label>
+          <input class="formInp2" type=text name=lastName>
+        </span>
+        <span class="formText3">
+          <label>Nationality</label>
+          <select id="selectColor" name=nationality>
+            <option id="chooseNat" value=0></option>
+            <option value=1>American</option>
+            <option value=2>Russian</option>
+            <option value=3>Asian</option>
+          </select>
+        </span>
+        <span class="formText4">
+          <label>E-mail</label>
+          <input class="formInp4" type=email name=email>
+        </span>
+        <span class="formText5">
+          <label>Date of Birth</label>
+          <input class="formInp5" id='dateCh' type=text name=dateWeb min="1900-01-01" max="2024-01-01"
+            onfocus="(this.type='date')">
+        </span>
+        <span class="formText6">
+          <label>Gender</label><br>
+          <input class="radio1" type=radio name=gender value=1><span class="radio1Txt">Male</span>
+          <input class="radio2" type=radio name=gender value=2><span class="radio2Txt">Female</span>
+        </span>
+        <span class="formText7">
+          <label>Password</label>
+          <input class="formInp7" type=password name=password>
+        </span>
+        <span class="formText8">
+          <label>Confirm Password</label>
+          <input class="formInp8" type=password name=confirmPassword>
+        </span>
+        <span class="formText9">
+          Have an account?
+          <a href="#">Login</a>
+        </span>
+        <span class="formText10">
+          <input class="formInp10" type=submit name=done value='Complete Signup'>
+        </span>
+      </form>
+      <span class="formText11">Successful Registration</span>
+    </div>
+    <object class="obj" id="circ" type="image/svg+xml" data="SVG/anim_user.svg"></object>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js" referrerpolicy="no-referrer"></script>
+  <script src="JS/svg_anim.js"></script>
+  <script src="JS/form_valid.js"></script>
+</body>
+
 </html>
